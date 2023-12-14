@@ -1,0 +1,109 @@
+(1)  difference between Python version 2 and version 3 ? How do you check the current version of python?
+ ==>>i)Python 2 uses print as a statement, while Python 3 uses print as a function. For example, in Python 2, you can write print "Hello" without parentheses, but in Python 3, you need to write print("Hello") with parentheses.
+    ii) Python 2 stores strings as ASCII by default, while Python 3 uses Unicode by default. This means that Python 3 can handle more characters and languages than Python 2, but it also requires more memory and may cause compatibility issues with some libraries and modules.
+    iii)Python 2 performs integer division by default, while Python 3 performs true division by default. For example, in Python 2, 5 / 2 returns 2, but in Python 3, 5 / 2 returns 2.5. To get the same result in both versions, you can use // for integer division or from __future__ import division for true division.
+II) import sys
+   print("python version:" , sys.version)
+
+(2) Difference between local variable and global variable ? explain with Examples?
+==>>I)A local variable is a variable that is declared inside a function and can only be accessed within that function. 
+eg.def f():
+	s = "Chanda"
+	print(s)
+f()
+Output:Chanda
+II)These are those which are defined outside any function and which are accessible throughout the program.
+eg.# This function uses global variable s
+def f():
+	print("Inside", s)
+s = "Chanda"
+f()
+print("Outside Function", s)
+Output:Inside Chanda
+Outside Function Chanda
+
+(3) What are data types in python ?
+  Numeric: These are the data types that store numeric values, such as integers, floats, and complex numbers. They are represented by the classes int, float.
+
+•  String: This is the data type that stores text or characters, such as "Hello" or "Python". It is represented by the class str in Python.
+
+•  List: This is the data type that stores an ordered collection of items, which can be of different types. It is represented by the class list in Python, and uses square brackets [ ] to enclose the items.
+
+•  Tuple: This is the data type that stores an ordered collection of items, which can be of different types. It is similar to a list, but it is immutable, meaning it cannot be changed once created. It is represented by the class tuple in Python, and uses parentheses ( ) to enclose the items.
+
+•  Dictionary: This is the data type that stores an unordered collection of key-value pairs, where each key is unique and associated with a value. It is represented by the class dict in Python, and uses curly braces { } to enclose the pairs.
+
+•  Set: This is the data type that stores an unordered collection of unique items, which can be of different types. It is represented by the class set in Python, and uses curly braces { } to enclose the items.
+
+•  Boolean: This is the data type that stores a logical value, either True or False. It is represented by the class bool in Python, and is often used for conditional statements and comparisons.
+
+•  Binary: These are the data types that store binary data, such as bytes, bytearray, and memoryview. They are represented by the classes bytes, bytearray, and memoryview in Python, and are used for low-level operations and manipulation of binary data.
+
+(4)What is difference between mutable and immutable data types in python? How many data types are mutable or not ? please provide reason also with example ? 
+==>>The difference between mutable and immutable data types in Python is that mutable data types can be changed after they are created, while immutable data types cannot. For example, you can add or remove elements from a list, which is a mutable data type, but you cannot change the characters in a string, which is an immutable data type.
+
+There are four immutable data types in Python: numbers, strings, tuples. There are three mutable data types in Python: lists, dictionaries, and sets. There are also some variations of these data types, such as bytes which are immutable and mutable versions of binary data, respectively.
+
+The reason for having mutable and immutable data types in Python is related to how they are stored and accessed in memory. Immutable data types are faster and more efficient to access, but they require more memory and create copies when modified. Mutable data types are more flexible and dynamic, but they are slower and more prone to errors and side effects.
+e.g.I)Immutable dataType 
+tuple1 = (0, 1, 2, 3) 
+tuple1[0] = 4
+print(tuple1)
+Output will show error
+II)Mutable DataType:
+my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list) 
+output : [1,2,3,4]
+
+(5) Why we use loops ? Please provide 3 examples of for loop and 3 exaples of while loops?
+==>>We use loops in Python to repeat a block of code a certain number of times or until a condition is met. Loops are useful for performing tasks that require iteration, such as traversing a sequence, performing calculations, or generating content.
+There are two types of loops in Python: for loop and while loop. A for loop is used to iterate over a sequence or an iterable object, such as a list, a tuple, a string, a dictionary, a set, or a range. A while loop is used to execute a block of code as long as a given condition is true.
+
+(6)Why we use functions ? Difference between lambda , filter ,reduce , map function with example ?
+==>>We use functions in Python to group related statements that perform a specific task. Functions help us to avoid repeating code, make our code more modular and readable, and facilitate debugging and testing. Functions can also take arguments and return values, which allow us to pass data and reuse the same logic for different inputs.
+•  Lambda is a keyword that allows us to create anonymous functions, i.e., functions without a name. Lambda functions can have any number of arguments but only one expression, which is returned as the function value. Lambda functions are useful when we need a simple function for a short time and don't want to define it with a name.
+•  Filter is a function that takes a function and an iterable as arguments and returns an iterator that contains only those elements of the iterable for which the function returns True. Filter is useful when we want to filter out some elements from a sequence based on a condition. 
+•  Reduce is a function that takes a function and an iterable as arguments and returns a single value that is the result of applying the function to the elements of the iterable from left to right. Reduce is useful when we want to combine the elements of a sequence into a single value, such as a sum, a product, or a maximum.
+•  Map is a function that takes a function and an iterable as arguments and returns an iterator that applies the function to each element of the iterable. Map is useful when we want to transform the elements of a sequence according to a function, such as applying a mathematical operation or a string method. 
+
+(7)Difference between list and tuple ? please provide index() , insert() , append() , reverse() examples in list ?
+==>>•  A list is mutable, which means it can be changed or modified after it is created. A tuple is immutable, which means it cannot be changed or modified once it is created.
+•  A list is denoted by square brackets [ ], while a tuple is denoted by parentheses ( ).
+•  A list has more built-in methods than a tuple, such as append(), insert(), reverse(), etc. A tuple has only two built-in methods: count() and index().
+•  A list consumes more memory than a tuple, as it requires extra space for new objects. A tuple consumes less memory, as it is stored in a single memory block.
+•  A list is slower and more prone to errors than a tuple, as it allows dynamic changes. A tuple is faster and more reliable than a list, as it prevents accidental modifications.
+
+(8)Difference between dictionary and set ? Please provide keys() , values() , items() example of dictionary and union() , intersection() in sets ? Is frozenset is mutable or not ? 
+==>>•  A dictionary is an ordered collection of key-value pairs, where each key is unique and associated with a value. A set is an unordered collection of unique items, which can be of different types.
+•  A dictionary is denoted by curly braces { } with a colon : separating the key and the value. A set is also denoted by curly braces { }, but without any colon.
+•  A dictionary can use nested among all data types, such as lists, tuples, sets, or other dictionaries. A set can also use nested among all data types, except for other sets or dictionaries.
+•  A dictionary has more built-in methods than a set, such as keys(), values(), items(), etc. A set has some built-in methods that are not available for dictionaries, such as union(), intersection()
+
+A frozenset is a special type of set that is immutable, meaning it cannot be changed or modified once it is created. It can be used as a key in a dictionary or as an element of another set, unlike a regular set. A frozenset can be created by using the frozenset() function on an iterable object, such as a list, a tuple, or a set.
+
+(9) What are decorators ? Please provide examples ?
+==>>Decorators are a design pattern in Python that allows you to modify the functionality of a function by wrapping it in another function.
+
+(10) What are list comprehension ? Please provide examples ?
+==>>List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.
+
+(11)Difference between hstack() and vstack()  with example?
+==>>hstack() takes a tuple of arrays as an argument and stacks them horizontally (i.e. column wise) to make a single array. 
+vstack() takes a tuple of arrays as an argument and stacks them vertically (i.e. row wise) to make a single array.
+
+(14).How we can  reshape your array in numpy ? Please provide example also ?
+==>>We can reshape an array in numpy by using the reshape function, which takes a new shape as an argument and returns a new array with that shape. The new shape must be compatible with the original shape, meaning that the total number of elements must be the same.
+
+(15) what is argmin() and argmax() in numpy ? please exaplain using an example ?
+=>>They can be useful for finding the location of the smallest or largest element in an array, or for sorting and ranking the elements.
+
+
+
+
+
+
+
+
+
+
